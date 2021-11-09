@@ -11,9 +11,9 @@ As part of the bioinformatics internship, we undertook this mini-project to repr
 # Background Information
 ## Step 1. Downloading SRA data
 First we downloaded the accession list of SRA files from SRA database url provided under additional information in the paper. The file was saved in Raw-Data directory as SraAccList.txt
-## Setup
+### Setup
 ```conda install -c bioconda/label/cf201901 sra-tools```
-## Bash Script called Download-Sra.sh
+### Bash Script called Download-Sra.sh
 ```
 for file in $(cat ../Raw-Data/SraAccList.txt)
 do
@@ -21,7 +21,7 @@ prefetch $file
 done
 ```
 
-### Output
+#### Output
 ```
 └── public
     └── sra
