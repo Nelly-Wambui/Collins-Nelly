@@ -80,9 +80,15 @@ done
 
 ```
 ## Step 3: Quality Control of fastq paired end reads
+### Setup
 We downloaded FastP using thr following command
 ```
 conda install -c bioconda/label/cf201901 fastp
 ```
-0
 
+### Bash script for removing adapters,poly-N sequences and filter off low quality reads
+```
+for file in $(cat ../Raw-Data/SraAccList.txt)
+do
+fastp -i ~/ncbi/miniproject-fastq/$file.sra_1.fastq -I ~/ncbi/miniproject-fastq/$file.sra_2.fastq -o ~/ncbi/fastp-qc/out$file.sra_1.fastq -O ~/ncbi/fastp-qc/out$file.sra_2.fastq -h ~/ncbi/fastp-qc/out$file.html -j ~/ncbi/fastp-qc/out$file.json
+done
