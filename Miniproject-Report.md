@@ -146,8 +146,18 @@ We downloaded Bowtie2 v2 using
 ```
 conda install -c bioconda bowtie2
 ```
-### Downloading index genome = tomato genome
+### Downloading index genome = tomato genome (GenBank RefSeq accession number GCA_000188115.3)
 ```
 wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/188/115/GCF_000188115.4_SL3.0/GCF_000188115.4_SL3.0_genomic.fna.gz
+```
+### Unzipping the genome file
+```
 gunzip GCF_000188115.4_SL3.0_genomic.fna.gz
 ```
+### Building the bowtie index for storing the genome
+```
+bowtie2-build GCF_000188115.4_SL3.0_genomic.fna tomato_t15
+```
+### Bash script for alignment/mapping of the high-quality reads to the tomato genome
+```
+
