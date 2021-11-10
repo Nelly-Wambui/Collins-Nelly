@@ -160,4 +160,23 @@ bowtie2-build GCF_000188115.4_SL3.0_genomic.fna tomato_t15
 ```
 ### Bash script for alignment/mapping of the high-quality reads to the tomato genome
 ```
-
+for file in $(cat ../Raw-Data/SraAccList.txt)
+do
+bowtie2 -x ~/Nelly/Tomato-Genome/tomato_t15 -1 ~/ncbi/fastp-qc/out$file.sra_1.fastq -2 ~/ncbi/fastp-qc/out$file.sra_2.fastq -S ~/ncbi/mapped-sequences/out$file.sam
+done
+```
+### Output
+```
+.
+├── outSRR12245789.sam
+├── outSRR12245790.sam
+├── outSRR12245791.sam
+├── outSRR12245792.sam
+├── outSRR12245793.sam
+├── outSRR12245794.sam
+├── outSRR12245795.sam
+├── outSRR12245796.sam
+├── outSRR12245797.sam
+├── outSRR12245798.sam
+└── outSRR12245799.sam
+```
