@@ -140,3 +140,14 @@ done
 ├── outSRR12245799.sra_1.fastq
 └── outSRR12245799.sra_2.fastq
 ```
+## Step 4: Mapping fasq reads to tomato genome
+### Setup
+We downloaded Bowtie2 v2 using 
+```
+conda install -c bioconda bowtie2
+```
+### Downloading index genome = tomato genome
+```
+wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/188/115/GCF_000188115.4_SL3.0/GCF_000188115.4_SL3.0_genomic.fna.gz
+gunzip GCF_000188115.4_SL3.0_genomic.fna.gz
+```
