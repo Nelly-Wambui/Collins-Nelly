@@ -186,3 +186,45 @@ We downloaded Megahit using
 ```
 conda install -c bioconda megahit
 ```
+We then renamed the alignment output by removing the prefix "out" for ease of use of the files
+```
+rename 's/out//g' *
+```
+### Converting sam file to bam file
+This was done because the sam file was too huge. The bam file is a binary file.
+The script below was ran:
+```
+for file in $(cat ../Raw-Data/SraAccList.txt)
+do 
+samtools view -b -o ~/ncbi/mapped-sequences/$file.bam ~/ncbi/mapped-sequences/$file.sam
+done
+```
+### Extracting the unmapped reads
+```
+for file in $(cat ../Raw-Data/SraAccList.txt)
+do
+samtools view -b -f 12 ~/ncbi/mapped-sequences/$file.bam > ~/ncbi/mapped-sequences/unmapped-reads/$file.bam
+done
+```
+### Sorting bam files with unmapped reads by read name
+```
+for file in $(cat ../Raw-Data/SraAccList.txt)
+do
+samtools sort -n ~/ncbi/mapped-sequences/unmapped-reads/$file.bam -o ~/ncbi/mapped-sequences/unmapped-reads/$file.sorted.bam
+done
+```
+### Converting sorted bam files to fastq
+```
+for file in $(cat ../Raw-Data/SraAccList.txt)
+do
+samtools bam2fq ~/ncbi/mapped-sequences/unmapped-reads/$file.sorted.bam > ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/$file.fastq
+done
+```
+### Quality control using fastqc and multiqc
+```
+for file in $(cat ../Raw-Data/SraAccList.txt)
+do
+fastqc ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/$file.fastq -o ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/fastqc
+done
+multiqc ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/fastqc -o ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/fastqc
+```
