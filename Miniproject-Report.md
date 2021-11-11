@@ -199,6 +199,32 @@ do
 samtools view -b -o ~/ncbi/mapped-sequences/$file.bam ~/ncbi/mapped-sequences/$file.sam
 done
 ```
+### Output
+```
+.
+├── SRR12245789.bam
+├── SRR12245789.sam
+├── SRR12245790.bam
+├── SRR12245790.sam
+├── SRR12245791.bam
+├── SRR12245791.sam
+├── SRR12245792.bam
+├── SRR12245792.sam
+├── SRR12245793.bam
+├── SRR12245793.sam
+├── SRR12245794.bam
+├── SRR12245794.sam
+├── SRR12245795.bam
+├── SRR12245795.sam
+├── SRR12245796.bam
+├── SRR12245796.sam
+├── SRR12245797.bam
+├── SRR12245797.sam
+├── SRR12245798.bam
+├── SRR12245798.sam
+├── SRR12245799.bam
+├── SRR12245799.sam
+```
 ### Extracting the unmapped reads
 ```
 for file in $(cat ../Raw-Data/SraAccList.txt)
@@ -213,12 +239,52 @@ do
 samtools sort -n ~/ncbi/mapped-sequences/unmapped-reads/$file.bam -o ~/ncbi/mapped-sequences/unmapped-reads/$file.sorted.bam
 done
 ```
+### Output
+```
+├── SRR12245789.bam
+├── SRR12245789.sorted.bam
+├── SRR12245790.bam
+├── SRR12245790.sorted.bam
+├── SRR12245791.bam
+├── SRR12245791.sorted.bam
+├── SRR12245792.bam
+├── SRR12245792.sorted.bam
+├── SRR12245793.bam
+├── SRR12245793.sorted.bam
+├── SRR12245794.bam
+├── SRR12245794.sorted.bam
+├── SRR12245795.bam
+├── SRR12245795.sorted.bam
+├── SRR12245796.bam
+├── SRR12245796.sorted.bam
+├── SRR12245797.bam
+├── SRR12245797.sorted.bam
+├── SRR12245798.bam
+├── SRR12245798.sorted.bam
+├── SRR12245799.bam
+├── SRR12245799.sorted.bam
+    
+```
 ### Converting sorted bam files to fastq
 ```
 for file in $(cat ../Raw-Data/SraAccList.txt)
 do
 samtools bam2fq ~/ncbi/mapped-sequences/unmapped-reads/$file.sorted.bam > ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/$file.fastq
 done
+```
+### Output
+```
+├── SRR12245789.fastq
+├── SRR12245790.fastq
+├── SRR12245791.fastq
+├── SRR12245792.fastq
+├── SRR12245793.fastq
+├── SRR12245794.fastq
+├── SRR12245795.fastq
+├── SRR12245796.fastq
+├── SRR12245797.fastq
+├── SRR12245798.fastq
+└── SRR12245799.fastq
 ```
 ### Quality control using fastqc and multiqc
 ```
@@ -227,4 +293,37 @@ do
 fastqc ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/$file.fastq -o ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/fastqc
 done
 multiqc ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/fastqc -o ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/fastqc
+```
+### Output
+```
+├── fastqc
+        │   ├── multiqc_data
+        │   │   ├── multiqc_data.json
+        │   │   ├── multiqc_fastqc.txt
+        │   │   ├── multiqc_general_stats.txt
+        │   │   ├── multiqc.log
+        │   │   └── multiqc_sources.txt
+        │   ├── multiqc_report.html
+        │   ├── SRR12245789_fastqc.html
+        │   ├── SRR12245789_fastqc.zip
+        │   ├── SRR12245790_fastqc.html
+        │   ├── SRR12245790_fastqc.zip
+        │   ├── SRR12245791_fastqc.html
+        │   ├── SRR12245791_fastqc.zip
+        │   ├── SRR12245792_fastqc.html
+        │   ├── SRR12245792_fastqc.zip
+        │   ├── SRR12245793_fastqc.html
+        │   ├── SRR12245793_fastqc.zip
+        │   ├── SRR12245794_fastqc.html
+        │   ├── SRR12245794_fastqc.zip
+        │   ├── SRR12245795_fastqc.html
+        │   ├── SRR12245795_fastqc.zip
+        │   ├── SRR12245796_fastqc.html
+        │   ├── SRR12245796_fastqc.zip
+        │   ├── SRR12245797_fastqc.html
+        │   ├── SRR12245797_fastqc.zip
+        │   ├── SRR12245798_fastqc.html
+        │   ├── SRR12245798_fastqc.zip
+        │   ├── SRR12245799_fastqc.html
+        │   └── SRR12245799_fastqc.zip
 ```
