@@ -180,3 +180,9 @@ done
 ├── outSRR12245798.sam
 └── outSRR12245799.sam
 ```
+## Step 5: Assembling unmapped reads into contigs de novo
+### Setup
+We downloaded Megahit using
+```
+conda install -c bioconda megahit
+```
