@@ -1,4 +1,6 @@
-for file in $(cat  ../Raw-Data/SraAccList.txt)  #Loops through a list of the sequence reads accession number
+#Loops through each file
+for file in $(cat  ../Raw-Data/SraAccList.txt)  
 do
-prefetch $file                                  #Download sequence read data
+#Download sequence read data
+prefetch $file                                  
 done 
