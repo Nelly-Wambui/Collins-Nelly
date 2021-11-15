@@ -169,7 +169,7 @@ done
 
 ### Setup
 
-We downloaded Bowtie2 v2 using
+We downloaded Bowtie2 v2
 
 ```
 conda install -c bioconda bowtie2
