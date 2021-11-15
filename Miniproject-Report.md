@@ -101,7 +101,7 @@ done
 
 ### Setup
 
-We downloaded FastP using thr following command
+We downloaded FastP using the following command
 
 ```
 conda install -c bioconda/label/cf201901 fastp
