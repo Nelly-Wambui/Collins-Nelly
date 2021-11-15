@@ -107,7 +107,7 @@ We downloaded FastP using thr following command
 conda install -c bioconda/label/cf201901 fastp
 ```
 
-### Bash script named fasp.sh for removing adapters,poly-N sequences and filter off low quality reads
+### Bash script named fastp.sh for removing adapters,poly-N sequences and filter off low quality reads
 
 ```
 for file in $(cat ../Raw-Data/SraAccList.txt)
@@ -165,7 +165,7 @@ done
 └── outSRR12245799.sra_2.fastq
 ```
 
-## Step 4: Mapping fasq reads to tomato genome using script named map-sequences.sh
+## Step 4: Mapping fastq reads to tomato genome using script named map-sequences.sh
 
 ### Setup
 
