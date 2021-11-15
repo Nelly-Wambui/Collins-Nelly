@@ -390,3 +390,11 @@ multiqc ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/fastqc -o ~/ncbi/m
         │   ├── SRR12245799_fastqc.html
         │   └── SRR12245799_fastqc.zip
 ```
+## Step 6: Downloading the ToLCV genomes
+### Setup
+```
+for file in $(cat ../Raw-Data/Begomovirus-AccessionList)
+do
+esearch -db nucleotide -query $file | efetch -format fasta > ~/ncbi/Begomovirus-Genomes/$file.fasta
+done
+```
