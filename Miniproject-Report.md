@@ -116,51 +116,51 @@ done
 ### Output
 
 ```
-.
-├── outSRR12245789.html
-├── outSRR12245789.json
-├── outSRR12245789.sra_1.fastq
-├── outSRR12245789.sra_2.fastq
-├── outSRR12245790.html
-├── outSRR12245790.json
-├── outSRR12245790.sra_1.fastq
-├── outSRR12245790.sra_2.fastq
-├── outSRR12245791.html
-├── outSRR12245791.json
-├── outSRR12245791.sra_1.fastq
-├── outSRR12245791.sra_2.fastq
-├── outSRR12245792.html
-├── outSRR12245792.json
-├── outSRR12245792.sra_1.fastq
-├── outSRR12245792.sra_2.fastq
-├── outSRR12245793.html
-├── outSRR12245793.json
-├── outSRR12245793.sra_1.fastq
-├── outSRR12245793.sra_2.fastq
-├── outSRR12245794.html
-├── outSRR12245794.json
-├── outSRR12245794.sra_1.fastq
-├── outSRR12245794.sra_2.fastq
-├── outSRR12245795.html
-├── outSRR12245795.json
-├── outSRR12245795.sra_1.fastq
-├── outSRR12245795.sra_2.fastq
-├── outSRR12245796.html
-├── outSRR12245796.json
-├── outSRR12245796.sra_1.fastq
-├── outSRR12245796.sra_2.fastq
-├── outSRR12245797.html
-├── outSRR12245797.json
-├── outSRR12245797.sra_1.fastq
-├── outSRR12245797.sra_2.fastq
-├── outSRR12245798.html
-├── outSRR12245798.json
-├── outSRR12245798.sra_1.fastq
-├── outSRR12245798.sra_2.fastq
-├── outSRR12245799.html
-├── outSRR12245799.json
-├── outSRR12245799.sra_1.fastq
-└── outSRR12245799.sra_2.fastq
+├── fastp-qc
+   ├── outSRR12245789.html
+   ├── outSRR12245789.json
+   ├── outSRR12245789.sra_1.fastq
+   ├── outSRR12245789.sra_2.fastq
+   ├── outSRR12245790.html
+   ├── outSRR12245790.json
+   ├── outSRR12245790.sra_1.fastq
+   ├── outSRR12245790.sra_2.fastq
+   ├── outSRR12245791.html
+   ├── outSRR12245791.json
+   ├── outSRR12245791.sra_1.fastq
+   ├── outSRR12245791.sra_2.fastq
+   ├── outSRR12245792.html
+   ├── outSRR12245792.json
+   ├── outSRR12245792.sra_1.fastq
+   ├── outSRR12245792.sra_2.fastq
+   ├── outSRR12245793.html
+   ├── outSRR12245793.json
+   ├── outSRR12245793.sra_1.fastq
+   ├── outSRR12245793.sra_2.fastq
+   ├── outSRR12245794.html
+   ├── outSRR12245794.json
+   ├── outSRR12245794.sra_1.fastq
+   ├── outSRR12245794.sra_2.fastq
+   ├── outSRR12245795.html
+   ├── outSRR12245795.json
+   ├── outSRR12245795.sra_1.fastq
+   ├── outSRR12245795.sra_2.fastq
+   ├── outSRR12245796.html
+   ├── outSRR12245796.json
+   ├── outSRR12245796.sra_1.fastq
+   ├── outSRR12245796.sra_2.fastq
+   ├── outSRR12245797.html
+   ├── outSRR12245797.json
+   ├── outSRR12245797.sra_1.fastq
+   ├── outSRR12245797.sra_2.fastq
+   ├── outSRR12245798.html
+   ├── outSRR12245798.json
+   ├── outSRR12245798.sra_1.fastq
+   ├── outSRR12245798.sra_2.fastq
+   ├── outSRR12245799.html
+   ├── outSRR12245799.json
+   ├── outSRR12245799.sra_1.fastq
+   └── outSRR12245799.sra_2.fastq
 ```
 
 ## Step 4: Mapping fastq reads to tomato genome using script named map-sequences.sh
