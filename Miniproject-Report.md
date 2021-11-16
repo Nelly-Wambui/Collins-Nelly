@@ -54,7 +54,7 @@ done
        ├── SRR12245798.sra
        └── SRR12245799.sra
 
-
+```
 
 ## Step 2: Extracting .sra files
 
