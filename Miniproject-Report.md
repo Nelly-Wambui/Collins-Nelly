@@ -117,12 +117,12 @@ done
 
 ```
 .
- ├── outSRR12245789.html
- ├── outSRR12245789.json
- ├── outSRR12245789.sra_1.fastq
- ├── outSRR12245789.sra_2.fastq
- ├── outSRR12245790.html
- ├── outSRR12245790.json
+├── outSRR12245789.html
+├── outSRR12245789.json
+├── outSRR12245789.sra_1.fastq
+├── outSRR12245789.sra_2.fastq
+├── outSRR12245790.html
+├── outSRR12245790.json
 ├── outSRR12245790.sra_1.fastq
 ├── outSRR12245790.sra_2.fastq
 ├── outSRR12245791.html
