@@ -356,36 +356,37 @@ multiqc ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/fastqc -o ~/ncbi/m
 ### Output
 
 ```
-├── fastqc
-        │   ├── multiqc_data
-        │   │   ├── multiqc_data.json
-        │   │   ├── multiqc_fastqc.txt
-        │   │   ├── multiqc_general_stats.txt
-        │   │   ├── multiqc.log
-        │   │   └── multiqc_sources.txt
-        │   ├── multiqc_report.html
-        │   ├── SRR12245789_fastqc.html
-        │   ├── SRR12245789_fastqc.zip
-        │   ├── SRR12245790_fastqc.html
-        │   ├── SRR12245790_fastqc.zip
-        │   ├── SRR12245791_fastqc.html
-        │   ├── SRR12245791_fastqc.zip
-        │   ├── SRR12245792_fastqc.html
-        │   ├── SRR12245792_fastqc.zip
-        │   ├── SRR12245793_fastqc.html
-        │   ├── SRR12245793_fastqc.zip
-        │   ├── SRR12245794_fastqc.html
-        │   ├── SRR12245794_fastqc.zip
-        │   ├── SRR12245795_fastqc.html
-        │   ├── SRR12245795_fastqc.zip
-        │   ├── SRR12245796_fastqc.html
-        │   ├── SRR12245796_fastqc.zip
-        │   ├── SRR12245797_fastqc.html
-        │   ├── SRR12245797_fastqc.zip
-        │   ├── SRR12245798_fastqc.html
-        │   ├── SRR12245798_fastqc.zip
-        │   ├── SRR12245799_fastqc.html
-        │   └── SRR12245799_fastqc.zip
+fastqc
+     ├── multiqc_data
+     │   ├── multiqc_data.json
+     │   ├── multiqc_fastqc.txt
+     │   ├── multiqc_general_stats.txt
+     │   ├── multiqc.log
+     │   └── multiqc_sources.txt
+     ├── multiqc_report.html
+     ├── SRR12245789_fastqc.html
+     ├── SRR12245789_fastqc.zip
+     ├── SRR12245790_fastqc.html
+     ├── SRR12245790_fastqc.zip
+     ├── SRR12245791_fastqc.html
+     ├── SRR12245791_fastqc.zip
+     ├── SRR12245792_fastqc.html
+     ├── SRR12245792_fastqc.zip
+     ├── SRR12245793_fastqc.html
+     ├── SRR12245793_fastqc.zip
+     ├── SRR12245794_fastqc.html
+     ├── SRR12245794_fastqc.zip
+     ├── SRR12245795_fastqc.html
+     ├── SRR12245795_fastqc.zip
+     ├── SRR12245796_fastqc.html
+     ├── SRR12245796_fastqc.zip
+     ├── SRR12245797_fastqc.html
+     ├── SRR12245797_fastqc.zip
+     ├── SRR12245798_fastqc.html
+     ├── SRR12245798_fastqc.zip
+     ├── SRR12245799_fastqc.html
+     └── SRR12245799_fastqc.zip
+
 ```
 ## Step 6: Downloading the ToLCV genomes
 
