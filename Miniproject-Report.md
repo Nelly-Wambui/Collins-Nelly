@@ -71,11 +71,17 @@ done
 
 ```
 ├── SRR12245789.sra_1.fastq
+
 ├── SRR12245789.sra_2.fastq
+
 ├── SRR12245790.sra_1.fastq
+
 ├── SRR12245790.sra_2.fastq
+
 ├── SRR12245791.sra_1.fastq
+
 ├── SRR12245791.sra_2.fastq
+
 ├── SRR12245792.sra_1.fastq
 ├── SRR12245792.sra_2.fastq
 ├── SRR12245793.sra_1.fastq
@@ -92,18 +98,6 @@ done
 ├── SRR12245798.sra_2.fastq
 ├── SRR12245799.sra_1.fastq
 ├── SRR12245799.sra_2.fastq
-└── test
-    ├── 789
-    ├── 789.html
-    ├── 789.json
-    ├── 789.sra_1.fastq
-    ├── 789.sra_2.fastq
-    ├── fastp.html
-    ├── fastp.json
-    ├── SRR12245789.sra_1.fastq
-    └── SRR12245789.sra_2.fastq
-
-
 
 ```
 
