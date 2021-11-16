@@ -42,19 +42,19 @@ done
 ```
 └── public
     └── sra
-        ├── SRR12245789.sra
-        ├── SRR12245790.sra
-        ├── SRR12245791.sra
-        ├── SRR12245792.sra
-        ├── SRR12245793.sra
-        ├── SRR12245794.sra
-        ├── SRR12245795.sra
-        ├── SRR12245796.sra
-        ├── SRR12245797.sra
-        ├── SRR12245798.sra
-        ├── SRR12245799.sra
-        └── SRX6727228.sra.cache
-```
+       ├── SRR12245789.sra
+       ├── SRR12245790.sra
+       ├── SRR12245791.sra
+       ├── SRR12245792.sra
+       ├── SRR12245793.sra
+       ├── SRR12245794.sra
+       ├── SRR12245795.sra
+       ├── SRR12245796.sra
+       ├── SRR12245797.sra
+       ├── SRR12245798.sra
+       └── SRR12245799.sra
+
+
 
 ## Step 2: Extracting .sra files
 
@@ -70,8 +70,6 @@ done
 ### Output
 
 ```
-../Raw-Data
-├── SraAccList.txt
 ├── SRR12245789.sra_1.fastq
 ├── SRR12245789.sra_2.fastq
 ├── SRR12245790.sra_1.fastq
@@ -93,7 +91,8 @@ done
 ├── SRR12245798.sra_1.fastq
 ├── SRR12245798.sra_2.fastq
 ├── SRR12245799.sra_1.fastq
-└── SRR12245799.sra_2.fastq
+├── SRR12245799.sra_2.fastq
+
 
 ```
 
@@ -119,6 +118,7 @@ done
 ### Output
 
 ```
+.
 ├── outSRR12245789.html
 ├── outSRR12245789.json
 ├── outSRR12245789.sra_1.fastq
@@ -163,6 +163,7 @@ done
 ├── outSRR12245799.json
 ├── outSRR12245799.sra_1.fastq
 └── outSRR12245799.sra_2.fastq
+
 ```
 
 ## Step 4: Mapping fastq reads to tomato genome using script named map-sequences.sh
