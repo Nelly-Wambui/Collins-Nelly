@@ -63,7 +63,7 @@ We extracted individual .sra file into fastq using a script named extract-sra.sh
 ```
 for file in $(cat ../Raw-Data/SraAccList.txt)
 do
-fasterq-dump ~/ncbi/public/sra/$file.sra --split-files  --outdir ../Raw-Data
+fasterq-dump ~/ncbi/public/sra/$file.sra --split-files  --outdir ~/ncbi/miniproject 
 done
 ```
 
@@ -92,7 +92,6 @@ done
 ├── SRR12245798.sra_2.fastq
 ├── SRR12245799.sra_1.fastq
 ├── SRR12245799.sra_2.fastq
-
 
 ```
 
