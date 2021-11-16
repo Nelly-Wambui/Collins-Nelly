@@ -161,7 +161,6 @@ done
 ├── outSRR12245799.json
 ├── outSRR12245799.sra_1.fastq
 └── outSRR12245799.sra_2.fastq
-
 ```
 
 ## Step 4: Mapping fastq reads to tomato genome using script named map-sequences.sh
@@ -317,7 +316,6 @@ done
 ├── SRR12245798.sorted.bam
 ├── SRR12245799.bam
 ├── SRR12245799.sorted.bam
-
 ```
 
 ### Converting sorted bam files to fastq using script names bam2fq.sh
@@ -390,10 +388,76 @@ multiqc ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/fastqc -o ~/ncbi/m
         │   └── SRR12245799_fastqc.zip
 ```
 ## Step 6: Downloading the ToLCV genomes
+
 ### Setup
 ```
 for file in $(cat ../Raw-Data/Begomovirus-AccessionList)
 do
 esearch -db nucleotide -query $file | efetch -format fasta > ~/ncbi/Begomovirus-Genomes/$file.fasta
 done
+```
+
+### Output
+```
+.
+├── AB100304.fasta
+├── AB110218.fasta
+├── AB116632.fasta
+├── AF024715.fasta
+├── AF071228.fasta
+├── AF105975.fasta
+├── AF188481.fasta
+├── AF195782.fasta
+├── AF271234.fasta
+├── AF274349.fasta
+├── AJ223505.fasta
+├── AJ489258.fasta
+├── AJ865338.fasta
+├── AJ865340.fasta
+├── AM491778.fasta
+├── AM701758.fasta
+├── AM701763.fasta
+├── AM701764.fasta
+├── AM701765.fasta
+├── AM701768.fasta
+├── AM884015.fasta
+├── AY134494.fasta
+├── AY297924.fasta
+├── AY502934.fasta
+├── AY594174.fasta
+├── AY602165.fasta
+├── DQ127170.fasta
+├── DQ339117.fasta
+├── DQ519575.fasta
+├── DQ631892.fasta
+├── EF060196.fasta
+├── EF185318.fasta
+├── EF194760.fasta
+├── EF450316.fasta
+├── EF523478.fasta
+├── EF539831.fasta
+├── EU350585.fasta
+├── EU487046.fasta
+├── EU635776.fasta
+├── EU862323.fasta
+├── EU910141.fasta
+├── FJ685621.fasta
+├── FM210278.fasta
+├── GU076440.fasta
+├── GU325633.fasta
+├── GU983859.fasta
+├── HM459851.fasta
+├── HM991146.fasta
+├── HQ162270.fasta
+├── JQ897969.fasta
+├── JX856172.fasta
+├── KF150142.fasta
+├── KF229723.fasta
+├── KF477277.fasta
+├── KF551578.fasta
+├── KF551585.fasta
+├── KY196216.fasta
+├── U88692.fasta
+├── X76319.fasta
+└── Z48182.fasta
 ```
