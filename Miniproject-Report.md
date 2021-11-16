@@ -101,7 +101,7 @@ done
 
 ### Setup
 
-We downloaded FastP using thr following command
+We downloaded FastP using the following command
 
 ```
 conda install -c bioconda/label/cf201901 fastp
@@ -169,7 +169,7 @@ done
 
 ### Setup
 
-We downloaded Bowtie2 v2 using
+We downloaded Bowtie2 v2
 
 ```
 conda install -c bioconda bowtie2
