@@ -70,28 +70,31 @@ done
 ### Output
 
 ```
-├── SRR12245789.sra_1.fastq
-├── SRR12245789.sra_2.fastq
-├── SRR12245790.sra_1.fastq
-├── SRR12245790.sra_2.fastq
-├── SRR12245791.sra_1.fastq
-├── SRR12245791.sra_2.fastq
-├── SRR12245792.sra_1.fastq
-├── SRR12245792.sra_2.fastq
-├── SRR12245793.sra_1.fastq
-├── SRR12245793.sra_2.fastq
-├── SRR12245794.sra_1.fastq
-├── SRR12245794.sra_2.fastq
-├── SRR12245795.sra_1.fastq
-├── SRR12245795.sra_2.fastq
-├── SRR12245796.sra_1.fastq
-├── SRR12245796.sra_2.fastq
-├── SRR12245797.sra_1.fastq
-├── SRR12245797.sra_2.fastq
-├── SRR12245798.sra_1.fastq
-├── SRR12245798.sra_2.fastq
-├── SRR12245799.sra_1.fastq
-├── SRR12245799.sra_2.fastq
+├── miniproject-fastq
+   ├── fqtitle.txt
+   ├── SRR12245789.sra_1.fastq
+   ├── SRR12245789.sra_2.fastq
+   ├── SRR12245790.sra_1.fastq
+   ├── SRR12245790.sra_2.fastq
+   ├── SRR12245791.sra_1.fastq
+   ├── SRR12245791.sra_2.fastq
+   ├── SRR12245792.sra_1.fastq
+   ├── SRR12245792.sra_2.fastq
+   ├── SRR12245793.sra_1.fastq
+   ├── SRR12245793.sra_2.fastq
+   ├── SRR12245794.sra_1.fastq
+   ├── SRR12245794.sra_2.fastq
+   ├── SRR12245795.sra_1.fastq
+   ├── SRR12245795.sra_2.fastq
+   ├── SRR12245796.sra_1.fastq
+   ├── SRR12245796.sra_2.fastq
+   ├── SRR12245797.sra_1.fastq
+   ├── SRR12245797.sra_2.fastq
+   ├── SRR12245798.sra_1.fastq
+   ├── SRR12245798.sra_2.fastq
+   ├── SRR12245799.sra_1.fastq
+   ├── SRR12245799.sra_2.fastq
+
 ```
 
 ## Step 3: Quality Control of fastq paired end reads
