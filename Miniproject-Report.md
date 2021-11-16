@@ -93,6 +93,7 @@ done
 ├── SRR12245799.sra_1.fastq
 ├── SRR12245799.sra_2.fastq
 
+
 ```
 
 ## Step 3: Quality Control of fastq paired end reads
