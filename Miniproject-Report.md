@@ -42,18 +42,18 @@ done
 ```
 └── public
     └── sra
-        ├── SRR12245789.sra
-        ├── SRR12245790.sra
-        ├── SRR12245791.sra
-        ├── SRR12245792.sra
-        ├── SRR12245793.sra
-        ├── SRR12245794.sra
-        ├── SRR12245795.sra
-        ├── SRR12245796.sra
-        ├── SRR12245797.sra
-        ├── SRR12245798.sra
-        ├── SRR12245799.sra
-        └── SRX6727228.sra.cache
+       ├── SRR12245789.sra
+       ├── SRR12245790.sra
+       ├── SRR12245791.sra
+       ├── SRR12245792.sra
+       ├── SRR12245793.sra
+       ├── SRR12245794.sra
+       ├── SRR12245795.sra
+       ├── SRR12245796.sra
+       ├── SRR12245797.sra
+       ├── SRR12245798.sra
+       └── SRR12245799.sra
+
 ```
 
 ## Step 2: Extracting .sra files
@@ -63,37 +63,37 @@ We extracted individual .sra file into fastq using a script named extract-sra.sh
 ```
 for file in $(cat ../Raw-Data/SraAccList.txt)
 do
-fasterq-dump ~/ncbi/public/sra/$file.sra --split-files  --outdir ../Raw-Data
+fasterq-dump ~/ncbi/public/sra/$file.sra --split-files  --outdir ~/ncbi/miniproject 
 done
 ```
 
 ### Output
 
 ```
-../Raw-Data
-├── SraAccList.txt
-├── SRR12245789.sra_1.fastq
-├── SRR12245789.sra_2.fastq
-├── SRR12245790.sra_1.fastq
-├── SRR12245790.sra_2.fastq
-├── SRR12245791.sra_1.fastq
-├── SRR12245791.sra_2.fastq
-├── SRR12245792.sra_1.fastq
-├── SRR12245792.sra_2.fastq
-├── SRR12245793.sra_1.fastq
-├── SRR12245793.sra_2.fastq
-├── SRR12245794.sra_1.fastq
-├── SRR12245794.sra_2.fastq
-├── SRR12245795.sra_1.fastq
-├── SRR12245795.sra_2.fastq
-├── SRR12245796.sra_1.fastq
-├── SRR12245796.sra_2.fastq
-├── SRR12245797.sra_1.fastq
-├── SRR12245797.sra_2.fastq
-├── SRR12245798.sra_1.fastq
-├── SRR12245798.sra_2.fastq
-├── SRR12245799.sra_1.fastq
-└── SRR12245799.sra_2.fastq
+├── miniproject-fastq
+   ├── fqtitle.txt
+   ├── SRR12245789.sra_1.fastq
+   ├── SRR12245789.sra_2.fastq
+   ├── SRR12245790.sra_1.fastq
+   ├── SRR12245790.sra_2.fastq
+   ├── SRR12245791.sra_1.fastq
+   ├── SRR12245791.sra_2.fastq
+   ├── SRR12245792.sra_1.fastq
+   ├── SRR12245792.sra_2.fastq
+   ├── SRR12245793.sra_1.fastq
+   ├── SRR12245793.sra_2.fastq
+   ├── SRR12245794.sra_1.fastq
+   ├── SRR12245794.sra_2.fastq
+   ├── SRR12245795.sra_1.fastq
+   ├── SRR12245795.sra_2.fastq
+   ├── SRR12245796.sra_1.fastq
+   ├── SRR12245796.sra_2.fastq
+   ├── SRR12245797.sra_1.fastq
+   ├── SRR12245797.sra_2.fastq
+   ├── SRR12245798.sra_1.fastq
+   ├── SRR12245798.sra_2.fastq
+   ├── SRR12245799.sra_1.fastq
+   ├── SRR12245799.sra_2.fastq
 
 ```
 
@@ -119,50 +119,51 @@ done
 ### Output
 
 ```
-├── outSRR12245789.html
-├── outSRR12245789.json
-├── outSRR12245789.sra_1.fastq
-├── outSRR12245789.sra_2.fastq
-├── outSRR12245790.html
-├── outSRR12245790.json
-├── outSRR12245790.sra_1.fastq
-├── outSRR12245790.sra_2.fastq
-├── outSRR12245791.html
-├── outSRR12245791.json
-├── outSRR12245791.sra_1.fastq
-├── outSRR12245791.sra_2.fastq
-├── outSRR12245792.html
-├── outSRR12245792.json
-├── outSRR12245792.sra_1.fastq
-├── outSRR12245792.sra_2.fastq
-├── outSRR12245793.html
-├── outSRR12245793.json
-├── outSRR12245793.sra_1.fastq
-├── outSRR12245793.sra_2.fastq
-├── outSRR12245794.html
-├── outSRR12245794.json
-├── outSRR12245794.sra_1.fastq
-├── outSRR12245794.sra_2.fastq
-├── outSRR12245795.html
-├── outSRR12245795.json
-├── outSRR12245795.sra_1.fastq
-├── outSRR12245795.sra_2.fastq
-├── outSRR12245796.html
-├── outSRR12245796.json
-├── outSRR12245796.sra_1.fastq
-├── outSRR12245796.sra_2.fastq
-├── outSRR12245797.html
-├── outSRR12245797.json
-├── outSRR12245797.sra_1.fastq
-├── outSRR12245797.sra_2.fastq
-├── outSRR12245798.html
-├── outSRR12245798.json
-├── outSRR12245798.sra_1.fastq
-├── outSRR12245798.sra_2.fastq
-├── outSRR12245799.html
-├── outSRR12245799.json
-├── outSRR12245799.sra_1.fastq
-└── outSRR12245799.sra_2.fastq
+├── fastp-qc
+   ├── outSRR12245789.html
+   ├── outSRR12245789.json
+   ├── outSRR12245789.sra_1.fastq
+   ├── outSRR12245789.sra_2.fastq
+   ├── outSRR12245790.html
+   ├── outSRR12245790.json
+   ├── outSRR12245790.sra_1.fastq
+   ├── outSRR12245790.sra_2.fastq
+   ├── outSRR12245791.html
+   ├── outSRR12245791.json
+   ├── outSRR12245791.sra_1.fastq
+   ├── outSRR12245791.sra_2.fastq
+   ├── outSRR12245792.html
+   ├── outSRR12245792.json
+   ├── outSRR12245792.sra_1.fastq
+   ├── outSRR12245792.sra_2.fastq
+   ├── outSRR12245793.html
+   ├── outSRR12245793.json
+   ├── outSRR12245793.sra_1.fastq
+   ├── outSRR12245793.sra_2.fastq
+   ├── outSRR12245794.html
+   ├── outSRR12245794.json
+   ├── outSRR12245794.sra_1.fastq
+   ├── outSRR12245794.sra_2.fastq
+   ├── outSRR12245795.html
+   ├── outSRR12245795.json
+   ├── outSRR12245795.sra_1.fastq
+   ├── outSRR12245795.sra_2.fastq
+   ├── outSRR12245796.html
+   ├── outSRR12245796.json
+   ├── outSRR12245796.sra_1.fastq
+   ├── outSRR12245796.sra_2.fastq
+   ├── outSRR12245797.html
+   ├── outSRR12245797.json
+   ├── outSRR12245797.sra_1.fastq
+   ├── outSRR12245797.sra_2.fastq
+   ├── outSRR12245798.html
+   ├── outSRR12245798.json
+   ├── outSRR12245798.sra_1.fastq
+   ├── outSRR12245798.sra_2.fastq
+   ├── outSRR12245799.html
+   ├── outSRR12245799.json
+   ├── outSRR12245799.sra_1.fastq
+   └── outSRR12245799.sra_2.fastq
 ```
 
 ## Step 4: Mapping fastq reads to tomato genome using script named map-sequences.sh
@@ -318,7 +319,6 @@ done
 ├── SRR12245798.sorted.bam
 ├── SRR12245799.bam
 ├── SRR12245799.sorted.bam
-
 ```
 
 ### Converting sorted bam files to fastq using script names bam2fq.sh
@@ -359,42 +359,111 @@ multiqc ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/fastqc -o ~/ncbi/m
 ### Output
 
 ```
-├── fastqc
-        │   ├── multiqc_data
-        │   │   ├── multiqc_data.json
-        │   │   ├── multiqc_fastqc.txt
-        │   │   ├── multiqc_general_stats.txt
-        │   │   ├── multiqc.log
-        │   │   └── multiqc_sources.txt
-        │   ├── multiqc_report.html
-        │   ├── SRR12245789_fastqc.html
-        │   ├── SRR12245789_fastqc.zip
-        │   ├── SRR12245790_fastqc.html
-        │   ├── SRR12245790_fastqc.zip
-        │   ├── SRR12245791_fastqc.html
-        │   ├── SRR12245791_fastqc.zip
-        │   ├── SRR12245792_fastqc.html
-        │   ├── SRR12245792_fastqc.zip
-        │   ├── SRR12245793_fastqc.html
-        │   ├── SRR12245793_fastqc.zip
-        │   ├── SRR12245794_fastqc.html
-        │   ├── SRR12245794_fastqc.zip
-        │   ├── SRR12245795_fastqc.html
-        │   ├── SRR12245795_fastqc.zip
-        │   ├── SRR12245796_fastqc.html
-        │   ├── SRR12245796_fastqc.zip
-        │   ├── SRR12245797_fastqc.html
-        │   ├── SRR12245797_fastqc.zip
-        │   ├── SRR12245798_fastqc.html
-        │   ├── SRR12245798_fastqc.zip
-        │   ├── SRR12245799_fastqc.html
-        │   └── SRR12245799_fastqc.zip
+fastqc
+     ├── multiqc_data
+     │   ├── multiqc_data.json
+     │   ├── multiqc_fastqc.txt
+     │   ├── multiqc_general_stats.txt
+     │   ├── multiqc.log
+     │   └── multiqc_sources.txt
+     ├── multiqc_report.html
+     ├── SRR12245789_fastqc.html
+     ├── SRR12245789_fastqc.zip
+     ├── SRR12245790_fastqc.html
+     ├── SRR12245790_fastqc.zip
+     ├── SRR12245791_fastqc.html
+     ├── SRR12245791_fastqc.zip
+     ├── SRR12245792_fastqc.html
+     ├── SRR12245792_fastqc.zip
+     ├── SRR12245793_fastqc.html
+     ├── SRR12245793_fastqc.zip
+     ├── SRR12245794_fastqc.html
+     ├── SRR12245794_fastqc.zip
+     ├── SRR12245795_fastqc.html
+     ├── SRR12245795_fastqc.zip
+     ├── SRR12245796_fastqc.html
+     ├── SRR12245796_fastqc.zip
+     ├── SRR12245797_fastqc.html
+     ├── SRR12245797_fastqc.zip
+     ├── SRR12245798_fastqc.html
+     ├── SRR12245798_fastqc.zip
+     ├── SRR12245799_fastqc.html
+     └── SRR12245799_fastqc.zip
+
 ```
 ## Step 6: Downloading the ToLCV genomes
+
 ### Setup
 ```
 for file in $(cat ../Raw-Data/Begomovirus-AccessionList)
 do
 esearch -db nucleotide -query $file | efetch -format fasta > ~/ncbi/Begomovirus-Genomes/$file.fasta
 done
+```
+
+### Output
+```
+.
+├── Begomovirus-Genomes
+   ├── AB100304.fasta
+   ├── AB110218.fasta
+   ├── AB116632.fasta
+   ├── AF024715.fasta
+   ├── AF071228.fasta
+   ├── AF105975.fasta
+   ├── AF188481.fasta
+   ├── AF195782.fasta
+   ├── AF271234.fasta
+   ├── AF274349.fasta
+   ├── AJ223505.fasta
+   ├── AJ489258.fasta
+   ├── AJ865338.fasta
+   ├── AJ865340.fasta
+   ├── AM491778.fasta
+   ├── AM701758.fasta
+   ├── AM701763.fasta
+   ├── AM701764.fasta
+   ├── AM701765.fasta
+   ├── AM701768.fasta
+   ├── AM884015.fasta
+   ├── AY134494.fasta
+   ├── AY297924.fasta
+   ├── AY502934.fasta
+   ├── AY594174.fasta
+   ├── AY602165.fasta
+   ├── DQ127170.fasta
+   ├── DQ339117.fasta
+   ├── DQ519575.fasta
+   ├── DQ631892.fasta
+   ├── EF060196.fasta
+   ├── EF185318.fasta
+   ├── EF194760.fasta
+   ├── EF450316.fasta
+   ├── EF523478.fasta
+   ├── EF539831.fasta
+   ├── EU350585.fasta
+   ├── EU487046.fasta
+   ├── EU635776.fasta
+   ├── EU862323.fasta
+   ├── EU910141.fasta
+   ├── FJ685621.fasta
+   ├── FM210278.fasta
+   ├── GU076440.fasta
+   ├── GU325633.fasta
+   ├── GU983859.fasta
+   ├── HM459851.fasta
+   ├── HM991146.fasta
+   ├── HQ162270.fasta
+   ├── JQ897969.fasta
+   ├── JX856172.fasta
+   ├── KF150142.fasta
+   ├── KF229723.fasta
+   ├── KF477277.fasta
+   ├── KF551578.fasta
+   ├── KF551585.fasta
+   ├── KY196216.fasta
+   ├── U88692.fasta
+   ├── X76319.fasta
+   └── Z48182.fasta
+
 ```
