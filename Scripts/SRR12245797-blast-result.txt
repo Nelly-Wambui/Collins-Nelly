@@ -1,0 +1,6 @@
+k141_10
+>EF194760.1 Tomato leaf curl Arusha virus isolate AFTT23 segment 
+k141_15
+>EF194760.1 Tomato leaf curl Arusha virus isolate AFTT23 segment 
+k141_11
+>DQ519575.1 Tomato leaf curl Arusha virus segment DNA-A, complete 
