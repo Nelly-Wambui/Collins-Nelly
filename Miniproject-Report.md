@@ -488,3 +488,12 @@ makeblastdb -in All_BG_Genomes.fasta -out BGdb.out dbtype 'nucl'
 ```
 
 ### Output
+```
+├── BGdb.ndb
+├── BGdb.nhr
+├── BGdb.nin
+├── BGdb.not
+├── BGdb.nsq
+├── BGdb.ntf
+├── BGdb.nto
+```
