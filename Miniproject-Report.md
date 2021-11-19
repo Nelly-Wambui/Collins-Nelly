@@ -391,7 +391,12 @@ fastqc
      └── SRR12245799_fastqc.zip
 
 ```
-## Step 6: Downloading the ToLCV genomes
+## Step 6: De-novo assembly of unmapped reads using megahit
+
+### Setup
+```
+
+## Step 7: Downloading the ToLCV genomes
 
 ### Setup
 We downloaded the genomes using the script: retrieving-Begomovirus-genomes.sh
@@ -469,7 +474,12 @@ done
    └── Z48182.fasta
 
 ```
-## Step 7: Making Blast Database using downloaded ToLCV genomes
+## Step 7: Performing blastn search for each of our samples' contigs sequences
+
+### Setup
+We created 
+
+## Step 8: Making Blast Database using downloaded ToLCV genomes
 
 ### Setup
 We put all genome files in one file called All_BG_Genomes.fasta
@@ -488,6 +498,7 @@ makeblastdb -in All_BG_Genomes.fasta -out BGdb.out dbtype 'nucl'
 ```
 
 ### Output
+
 ```
 ├── BGdb.ndb
 ├── BGdb.nhr
@@ -497,3 +508,5 @@ makeblastdb -in All_BG_Genomes.fasta -out BGdb.out dbtype 'nucl'
 ├── BGdb.ntf
 ├── BGdb.nto
 ```
+
+
