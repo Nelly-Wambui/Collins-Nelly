@@ -399,7 +399,7 @@ do
 megahit --12 ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/$file.fastq -o ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/$file-megahitout 
 done
 ```
-### Output of one sample SRR12245791-megahitout
+### Output of one sample: SRR12245791-megahitout
 ```
 ├── checkpoints.txt
 ├── done
@@ -487,9 +487,14 @@ done
 └── options.json
 ```
 
-## Step 6: Downloading the ToLCV genomes
-
+## Step 6: Blastn for similarity match and virus identification
 ### Setup
+```
+
+
+### Downloading the ToLCV genomes
+
+#### Setup
 We downloaded the genomes using the script: retrieving-Begomovirus-genomes.sh
 
 ```
