@@ -653,7 +653,7 @@ done
 
 ```
 
-### Extracting specific identified begomovirus contigs
+### Extraction of specific identified begomovirus contigs
 ```
 path1=~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/kaiju/virus-dna
 for file in $(cat ../Raw-Data/SraAccList.txt)
