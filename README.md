@@ -8,3 +8,5 @@ This project is about reproducing the dry lab analysis for the paper cited below
 
 1. Nelly Wambui
 2. Collins Kigen
+
+## A summary report on our analysis steps is documented on our [Wiki](https://github.com/Nelly-Wambui/Mini-Project/wiki)
