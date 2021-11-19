@@ -667,14 +667,14 @@ cat $file >> All_BG_Genomes.fasta
 done
 ```
 
-#### Making Database
+#### Making Database 
 
+##### Setup
 ```
 makeblastdb -in All_BG_Genomes.fasta -out BGdb.out dbtype 'nucl'
 ```
 
 #### Output
-
 ```
 ├── BGdb.ndb
 ├── BGdb.nhr
@@ -761,3 +761,9 @@ done
 ├── SRR12245798.fasta
 └── SRR12245799.fasta
 ```
+
+## Step 9: Protein prediction of ORFs using ORF Finder 
+
+[Link for ORF finder](http://www.ncbi.nlm.nih.gov/projects/gorf)
+
+### Output
