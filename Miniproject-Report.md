@@ -767,3 +767,16 @@ done
 [Link for ORF finder](http://www.ncbi.nlm.nih.gov/projects/gorf)
 
 ### Output
+```
+├── SRR12245789.fa
+├── SRR12245790.fa
+├── SRR12245791.fa
+├── SRR12245792.fa
+├── SRR12245793.fa
+├── SRR12245794.fa
+├── SRR12245795.fa
+├── SRR12245796.fa
+├── SRR12245797.fa
+├── SRR12245798.fa
+└── SRR12245799.fa
+```
