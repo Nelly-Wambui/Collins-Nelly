@@ -653,7 +653,7 @@ done
 
 ```
 
-### Extraction of specific identified begomovirus contigs
+### Extraction of specific identified begomovirus contigs using the extract-virus-contigs.sh script
 ```
 path1=~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/kaiju/virus-dna
 for file in $(cat ../Raw-Data/SraAccList.txt)
@@ -677,7 +677,7 @@ done
 └── SRR12245799.fasta
 ```
 
-### Blastn 
+### Blastn for each sequence using the blast-results.sh script
 ```
 #Assign data directory to a variable
 path1=~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/kaiju
