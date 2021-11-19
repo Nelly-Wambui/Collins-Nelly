@@ -16,9 +16,11 @@ As part of the bioinformatics internship, we undertook this mini-project to repr
 
 # Background Information
 
-Tomato production faces threats with one of them being infection by begomoviuses which are associated with tomato leaf curl diseases. Lack of enough information on the molecular properties of tomato begomoviruses in Kenya encouraged the investigation of their population and genetic diversity. The tomato fruits are not only useful for their nutritional value, such as having antioxidant properties to fight cancer, but are also a major source of income for smallholder rural farmers. To help in increase of yields, solving production constraints is of importance; and diseases caused by viruses are the third significant constraint. Sixty of the 136 viruses that infect tomatoes are members of the genus _Begomovirus_ and family Geminiviridae.
+Tomato production is the  major source of income for smallholder rural farmers. Tomatoes are rich in ascorbic acid, retinol and lycopene with antioxidant properties that fight cancer and hence have a high nutritional value. Tomato production in Kenya is approximately 419,000 tones valued at Ksh. 14 billion with the main producing counties being Kirinyaga, Kajiado, Nakuru, Meru, Bungoma and Taita Taveta.
 
-There was evaluation odf recombinant isolates within the population and the occurrence of selection pressure. The use of metagenomics in this approach was in identification of viruses in association with the disease.
+It, however, faces threats with one of them being infection by begomoviuses which are associated with tomato leaf curl diseases. Lack of enough information on the molecular properties of tomato begomoviruses in Kenya encouraged the investigation of their population and genetic diversity. To help in increase of yields, solving production constraints is of importance; and diseases caused by viruses are the third significant constraint. Sixty of the 136 viruses that infect tomatoes are members of the genus _Begomovirus_ and family Geminiviridae.
+
+This research investigation is on the population and genetic diversity of begomoviruses associated with the disease in Kenya and evaluates recombinant isolates within the population and the occurrence of selection pressure. The use of metagenomics in this approach was in identification of viruses in association with the disease.
 
 ## Step 1: Downloading SRA data
 
