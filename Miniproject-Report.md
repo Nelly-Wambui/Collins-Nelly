@@ -1,4 +1,4 @@
-Welcome to the Mini-project wiki!
+Welcome to our Mini-project
 
 # About
 
@@ -18,7 +18,7 @@ As part of the bioinformatics internship, we undertook this mini-project to repr
 
 Tomato production faces threats with one of them being infection by begomoviuses which are associated with tomato leaf curl diseases. Lack of enough information on the molecular properties of tomato begomoviruses in Kenya encouraged the investigation of their population and genetic diversity. The tomato fruits are not only useful for their nutritional value, such as having antioxidant properties to fight cancer, but are also a major source of income for smallholder rural farmers. To help in increase of yields, solving production constraints is of importance; and diseases caused by viruses are the third significant constraint. Sixty of the 136 viruses that infect tomatoes are members of the genus _Begomovirus_ and family Geminiviridae.
 
-There was evaluation odf recombinant isolates within the population and the occurrence of selection pressure. The use of metagenomics in this approach was in identification of viruses in association with the disease
+There was evaluation odf recombinant isolates within the population and the occurrence of selection pressure. The use of metagenomics in this approach was in identification of viruses in association with the disease.
 
 ## Step 1: Downloading SRA data
 
@@ -391,9 +391,144 @@ fastqc
      └── SRR12245799_fastqc.zip
 
 ```
-## Step 6: Downloading the ToLCV genomes
+### De-novo assembly of unmapped reads using megahit
 
+```
+for file in $(cat ../Raw-Data/SraAccList.txt)
+do 
+megahit --12 ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/$file.fastq -o ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/$file-megahitout 
+done
+```
+### Output of one sample: SRR12245791-megahitout
+```
+├── checkpoints.txt
+├── done
+├── final.contigs.fa
+├── intermediate_contigs
+│   ├── k119.addi.fa
+│   ├── k119.addi.fa.info
+│   ├── k119.bubble_seq.fa
+│   ├── k119.bubble_seq.fa.info
+│   ├── k119.contigs.fa
+│   ├── k119.contigs.fa.info
+│   ├── k119.final.contigs.fa
+│   ├── k119.final.contigs.fa.info
+│   ├── k119.local.fa
+│   ├── k119.local.fa.info
+│   ├── k141.addi.fa
+│   ├── k141.addi.fa.info
+│   ├── k141.bubble_seq.fa
+│   ├── k141.bubble_seq.fa.info
+│   ├── k141.contigs.fa
+│   ├── k141.contigs.fa.info
+│   ├── k141.final.contigs.fa
+│   ├── k141.final.contigs.fa.info
+│   ├── k21.addi.fa
+│   ├── k21.addi.fa.info
+│   ├── k21.bubble_seq.fa
+│   ├── k21.bubble_seq.fa.info
+│   ├── k21.contigs.fa
+│   ├── k21.contigs.fa.info
+│   ├── k21.final.contigs.fa
+│   ├── k21.final.contigs.fa.info
+│   ├── k21.local.fa
+│   ├── k21.local.fa.info
+│   ├── k29.addi.fa
+│   ├── k29.addi.fa.info
+│   ├── k29.bubble_seq.fa
+│   ├── k29.bubble_seq.fa.info
+│   ├── k29.contigs.fa
+│   ├── k29.contigs.fa.info
+│   ├── k29.final.contigs.fa
+│   ├── k29.final.contigs.fa.info
+│   ├── k29.local.fa
+│   ├── k29.local.fa.info
+│   ├── k39.addi.fa
+│   ├── k39.addi.fa.info
+│   ├── k39.bubble_seq.fa
+│   ├── k39.bubble_seq.fa.info
+│   ├── k39.contigs.fa
+│   ├── k39.contigs.fa.info
+│   ├── k39.final.contigs.fa
+│   ├── k39.final.contigs.fa.info
+│   ├── k39.local.fa
+│   ├── k39.local.fa.info
+│   ├── k59.addi.fa
+│   ├── k59.addi.fa.info
+│   ├── k59.bubble_seq.fa
+│   ├── k59.bubble_seq.fa.info
+│   ├── k59.contigs.fa
+│   ├── k59.contigs.fa.info
+│   ├── k59.final.contigs.fa
+│   ├── k59.final.contigs.fa.info
+│   ├── k59.local.fa
+│   ├── k59.local.fa.info
+│   ├── k79.addi.fa
+│   ├── k79.addi.fa.info
+│   ├── k79.bubble_seq.fa
+│   ├── k79.bubble_seq.fa.info
+│   ├── k79.contigs.fa
+│   ├── k79.contigs.fa.info
+│   ├── k79.final.contigs.fa
+│   ├── k79.final.contigs.fa.info
+│   ├── k79.local.fa
+│   ├── k79.local.fa.info
+│   ├── k99.addi.fa
+│   ├── k99.addi.fa.info
+│   ├── k99.bubble_seq.fa
+│   ├── k99.bubble_seq.fa.info
+│   ├── k99.contigs.fa
+│   ├── k99.contigs.fa.info
+│   ├── k99.final.contigs.fa
+│   ├── k99.final.contigs.fa.info
+│   ├── k99.local.fa
+│   └── k99.local.fa.info
+├── log
+└── options.json
+```
+## Step 6: Verfication using kaiju
 ### Setup
+```
+path1=~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq
+for file in $(cat ../Raw-Data/SraAccList.txt)
+do
+mkdir $path1/kaiju/$file
+kaiju -t $path1/kaiju/bin/kaijuDB/nodes.dmp -f $path1/kaiju/bin/kaijuDB/viruses/kaiju_db_viruses.fmi -i $path1/$file-megahitout/final.contigs.fa -o $path1/kaiju/$file/$file.out
+grep 'C' $path1/kaiju/$file/$file.out | cut -f 2 > $path1/kaiju/$file/identifiers.txt
+touch $path1/kaiju/virus-dna/$file.fasta
+mkdir $path1/kaiju/virus-dna/$file-contigs
+for id in $(cat $path1/kaiju/$file/identifiers.txt)
+do
+grep -A1 $id" " $path1/$file-megahitout/final.contigs.fa >> $path1/kaiju/virus-dna/$file.fasta
+grep -A1 $id" " $path1/$file-megahitout/final.contigs.fa > $path1/kaiju/virus-dna/$file-contigs/$id.fasta
+done
+echo $file' complete'
+done 
+```
+
+## Step 7: Blastn for similarity match and virus identification
+### Setup
+```
+path1=~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/kaiju
+for file in $(cat ../Raw-Data/SraAccList.txt)
+do
+mkdir $path1/virus-dna/$file-contigs/blast-results
+touch $path1/virus-dna/blast-results/$file-blast-results.txt
+for id in $(cat $path1/$file/identifiers.txt)
+do
+blastn -db BGdb -query $path1/virus-dna/$file-contigs/$id.fasta -out $path1/virus-dna/$file-contigs/blast-results/$id.out -max_target_seqs 1 
+echo $id >> $path1/virus-dna/virus-dna/blast-results/$file-blast-result.txt
+grep '>' $path1/virus-dna/$file-contigs/blast-results/$id.out >> $file-blast-result.txt
+done
+echo $file' complete'
+done 
+```
+
+### Downloading the ToLCV genomes
+
+#### Setup
+We downloaded the genomes using the script: retrieving-Begomovirus-genomes.sh
+
 ```
 for file in $(cat ../Raw-Data/Begomovirus-AccessionList)
 do
@@ -467,3 +602,39 @@ done
    └── Z48182.fasta
 
 ```
+## Step 7: Performing blastn search for each of our samples' contigs sequences
+
+### Setup
+We created 
+
+## Step 8: Making Blast Database using downloaded ToLCV genomes
+
+### Setup
+We put all genome files in one file called All_BG_Genomes.fasta
+
+```
+for file in $(cat list.txt)
+do
+cat $file >> All_BG_Genomes.fasta
+done
+```
+
+### Making Database
+
+```
+makeblastdb -in All_BG_Genomes.fasta -out BGdb.out dbtype 'nucl'
+```
+
+### Output
+
+```
+├── BGdb.ndb
+├── BGdb.nhr
+├── BGdb.nin
+├── BGdb.not
+├── BGdb.nsq
+├── BGdb.ntf
+├── BGdb.nto
+```
+
+
