@@ -1,4 +1,4 @@
-Welcome to the Mini-project wiki!
+Welcome to our Mini-project
 
 # About
 
@@ -391,12 +391,103 @@ fastqc
      └── SRR12245799_fastqc.zip
 
 ```
-## Step 6: De-novo assembly of unmapped reads using megahit
+### De-novo assembly of unmapped reads using megahit
 
-### Setup
+```
+for file in $(cat ../Raw-Data/SraAccList.txt)
+do 
+megahit --12 ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/$file.fastq -o ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/$file-megahitout 
+done
+```
+### Output of one sample SRR12245791-megahitout
+```
+├── checkpoints.txt
+├── done
+├── final.contigs.fa
+├── intermediate_contigs
+│   ├── k119.addi.fa
+│   ├── k119.addi.fa.info
+│   ├── k119.bubble_seq.fa
+│   ├── k119.bubble_seq.fa.info
+│   ├── k119.contigs.fa
+│   ├── k119.contigs.fa.info
+│   ├── k119.final.contigs.fa
+│   ├── k119.final.contigs.fa.info
+│   ├── k119.local.fa
+│   ├── k119.local.fa.info
+│   ├── k141.addi.fa
+│   ├── k141.addi.fa.info
+│   ├── k141.bubble_seq.fa
+│   ├── k141.bubble_seq.fa.info
+│   ├── k141.contigs.fa
+│   ├── k141.contigs.fa.info
+│   ├── k141.final.contigs.fa
+│   ├── k141.final.contigs.fa.info
+│   ├── k21.addi.fa
+│   ├── k21.addi.fa.info
+│   ├── k21.bubble_seq.fa
+│   ├── k21.bubble_seq.fa.info
+│   ├── k21.contigs.fa
+│   ├── k21.contigs.fa.info
+│   ├── k21.final.contigs.fa
+│   ├── k21.final.contigs.fa.info
+│   ├── k21.local.fa
+│   ├── k21.local.fa.info
+│   ├── k29.addi.fa
+│   ├── k29.addi.fa.info
+│   ├── k29.bubble_seq.fa
+│   ├── k29.bubble_seq.fa.info
+│   ├── k29.contigs.fa
+│   ├── k29.contigs.fa.info
+│   ├── k29.final.contigs.fa
+│   ├── k29.final.contigs.fa.info
+│   ├── k29.local.fa
+│   ├── k29.local.fa.info
+│   ├── k39.addi.fa
+│   ├── k39.addi.fa.info
+│   ├── k39.bubble_seq.fa
+│   ├── k39.bubble_seq.fa.info
+│   ├── k39.contigs.fa
+│   ├── k39.contigs.fa.info
+│   ├── k39.final.contigs.fa
+│   ├── k39.final.contigs.fa.info
+│   ├── k39.local.fa
+│   ├── k39.local.fa.info
+│   ├── k59.addi.fa
+│   ├── k59.addi.fa.info
+│   ├── k59.bubble_seq.fa
+│   ├── k59.bubble_seq.fa.info
+│   ├── k59.contigs.fa
+│   ├── k59.contigs.fa.info
+│   ├── k59.final.contigs.fa
+│   ├── k59.final.contigs.fa.info
+│   ├── k59.local.fa
+│   ├── k59.local.fa.info
+│   ├── k79.addi.fa
+│   ├── k79.addi.fa.info
+│   ├── k79.bubble_seq.fa
+│   ├── k79.bubble_seq.fa.info
+│   ├── k79.contigs.fa
+│   ├── k79.contigs.fa.info
+│   ├── k79.final.contigs.fa
+│   ├── k79.final.contigs.fa.info
+│   ├── k79.local.fa
+│   ├── k79.local.fa.info
+│   ├── k99.addi.fa
+│   ├── k99.addi.fa.info
+│   ├── k99.bubble_seq.fa
+│   ├── k99.bubble_seq.fa.info
+│   ├── k99.contigs.fa
+│   ├── k99.contigs.fa.info
+│   ├── k99.final.contigs.fa
+│   ├── k99.final.contigs.fa.info
+│   ├── k99.local.fa
+│   └── k99.local.fa.info
+├── log
+└── options.json
 ```
 
-## Step 7: Downloading the ToLCV genomes
+## Step 6: Downloading the ToLCV genomes
 
 ### Setup
 We downloaded the genomes using the script: retrieving-Begomovirus-genomes.sh
