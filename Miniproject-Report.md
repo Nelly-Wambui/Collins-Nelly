@@ -652,29 +652,37 @@ done
    └── Z48182.fasta
 
 ```
+### Making Blast Database using downloaded ToLCV genomes
 
-### Extraction of specific identified begomovirus contigs using the extract-virus-contigs.sh script
+#### Setup
+
+We put all genome files in one file called All_BG_Genomes.fasta
+
 ```
-path1=~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/kaiju/virus-dna
-for file in $(cat ../Raw-Data/SraAccList.txt)
+#Loops through each file
+for file in $(cat list.txt)
 do
-grep -B1 ">" $path1/blast-results/$file-blast-result.txt | head -n 1 > $path1/blast-results/$file-identifiers.txt 
-grep -A1 $(cat $path1/blast-results/$file-identifiers.txt) $path1/$file.fasta > $path1/final-blast-contigs/$file.fasta
-done 
+#open each file and redirects the content to another file containing output of all the sequences
+cat $file >> All_BG_Genomes.fasta
+done
 ```
-### Output
+
+#### Making Database
+
 ```
-├── SRR12245789.fasta
-├── SRR12245790.fasta
-├── SRR12245791.fasta
-├── SRR12245792.fasta
-├── SRR12245793.fasta
-├── SRR12245794.fasta
-├── SRR12245795.fasta
-├── SRR12245796.fasta
-├── SRR12245797.fasta
-├── SRR12245798.fasta
-└── SRR12245799.fasta
+makeblastdb -in All_BG_Genomes.fasta -out BGdb.out dbtype 'nucl'
+```
+
+#### Output
+
+```
+├── BGdb.ndb
+├── BGdb.nhr
+├── BGdb.nin
+├── BGdb.not
+├── BGdb.nsq
+├── BGdb.ntf
+├── BGdb.nto
 ```
 
 ### Blastn for each sequence using the blast-results.sh script
@@ -697,35 +705,59 @@ echo $file' complete'
 done 
 ```
 
-## Step 8: Making Blast Database using downloaded ToLCV genomes
+### Output of one of the samples
+```
+k141_2
+k141_29
+k141_69
+k141_710
+k141_1100
+k141_815
+k141_159
+k141_822
+k141_479
+k141_176
+k141_180
+k141_186
+k141_1149
+k141_205
+k141_889
+k141_236
+k141_558
+k141_929
+k141_933
+k141_939
+k141_604
+k141_618
+k141_308
+k141_1257
+k141_1265
+>EF194760.1 Tomato leaf curl Arusha virus isolate AFTT23 segment 
+```
+
+
+## Step 8: Extraction of specific identified begomovirus contigs using the extract-virus-contigs.sh script
 
 ### Setup
-
-We put all genome files in one file called All_BG_Genomes.fasta
-
 ```
-#Loops through each file
-for file in $(cat list.txt)
+path1=~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/kaiju/virus-dna
+for file in $(cat ../Raw-Data/SraAccList.txt)
 do
-#open each file and redirects the content to another file containing output of all the sequences
-cat $file >> All_BG_Genomes.fasta
-done
+grep -B1 ">" $path1/blast-results/$file-blast-result.txt | head -n 1 > $path1/blast-results/$file-identifiers.txt 
+grep -A1 $(cat $path1/blast-results/$file-identifiers.txt) $path1/$file.fasta > $path1/final-blast-contigs/$file.fasta
+done 
 ```
-
-### Making Database
-
-```
-makeblastdb -in All_BG_Genomes.fasta -out BGdb.out dbtype 'nucl'
-```
-
 ### Output
-
 ```
-├── BGdb.ndb
-├── BGdb.nhr
-├── BGdb.nin
-├── BGdb.not
-├── BGdb.nsq
-├── BGdb.ntf
-├── BGdb.nto
+├── SRR12245789.fasta
+├── SRR12245790.fasta
+├── SRR12245791.fasta
+├── SRR12245792.fasta
+├── SRR12245793.fasta
+├── SRR12245794.fasta
+├── SRR12245795.fasta
+├── SRR12245796.fasta
+├── SRR12245797.fasta
+├── SRR12245798.fasta
+└── SRR12245799.fasta
 ```
