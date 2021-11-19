@@ -469,3 +469,22 @@ done
    └── Z48182.fasta
 
 ```
+## Step 7: Making Blast Database using downloaded ToLCV genomes
+
+### Setup
+We put all genome files in one file called All_BG_Genomes.fasta
+
+```
+for file in $(cat list.txt)
+do
+cat $file >> All_BG_Genomes.fasta
+done
+```
+
+### Making Database
+
+```
+makeblastdb -in All_BG_Genomes.fasta -out BGdb.out dbtype 'nucl'
+```
+
+### Output
