@@ -513,9 +513,7 @@ done
 ```
 
 ## Step 6: Verification using kaiju script named kaiju-virus-dna-identifier.sh
-
 ### Setup
-
 ```
 #Assigns data directory to a variable
 path1=~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq
@@ -540,6 +538,7 @@ done
 echo $file' complete'
 done
 ```
+
 ### Output of one of the samples: SRR12245790-contigs
 ```
 ├── k141_1100.fasta
