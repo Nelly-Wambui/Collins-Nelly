@@ -31,8 +31,10 @@ First, we downloaded the accession list of SRA files from SRA database url provi
 ### Bash Script called Download-Sra.sh
 
 ```
-for file in $(cat ../Raw-Data/SraAccList.txt)
+#Loops through each file
+for file in $(cat  ../Raw-Data/SraAccList.txt)
 do
+#Download sequence read data
 prefetch $file
 done
 ```
@@ -61,9 +63,11 @@ done
 We extracted individual .sra file into fastq using a script named extract-sra.sh
 
 ```
+#Loops through a list of the sequence reads accession number
 for file in $(cat ../Raw-Data/SraAccList.txt)
 do
-fasterq-dump ~/ncbi/public/sra/$file.sra --split-files  --outdir ~/ncbi/miniproject 
+#Extract .sra files
+fasterq-dump ~/ncbi/public/sra/$file.sra --split-files  --outdir ~/ncbi/miniproject
 done
 ```
 
@@ -110,8 +114,10 @@ conda install -c bioconda/label/cf201901 fastp
 ### Bash script named fastp.sh for removing adapters,poly-N sequences and filter off low quality reads
 
 ```
+#Loops through each file
 for file in $(cat ../Raw-Data/SraAccList.txt)
 do
+#Removes adapters, poly-N sequences and filters off low quality reads
 fastp -i ~/ncbi/miniproject-fastq/$file.sra_1.fastq -I ~/ncbi/miniproject-fastq/$file.sra_2.fastq -o ~/ncbi/fastp-qc/out$file.sra_1.fastq -O ~/ncbi/fastp-qc/out$file.sra_2.fastq -h ~/ncbi/fastp-qc/out$file.html -j ~/ncbi/fastp-qc/out$file.json
 done
 ```
@@ -194,11 +200,12 @@ gunzip GCF_000188115.4_SL3.0_genomic.fna.gz
 bowtie2-build GCF_000188115.4_SL3.0_genomic.fna tomato_t15
 ```
 
-### Bash script for alignment/mapping of the high-quality reads to the tomato genome
+### Bash script for alignment/mapping of the high-quality reads to the tomato genome named map-sequences.sh
 
 ```
 for file in $(cat ../Raw-Data/SraAccList.txt)
 do
+#Maps high quality reads to the tomato genome
 bowtie2 -x ~/Nelly/Tomato-Genome/tomato_t15 -1 ~/ncbi/fastp-qc/out$file.sra_1.fastq -2 ~/ncbi/fastp-qc/out$file.sra_2.fastq -S ~/ncbi/mapped-sequences/out$file.sam
 done
 ```
@@ -242,8 +249,10 @@ This was done because the sam file was too huge. The bam file is a binary file.
 The script below was ran:
 
 ```
+#Loops through each file
 for file in $(cat ../Raw-Data/SraAccList.txt)
 do
+#Convert .sam files to .bam
 samtools view -b -o ~/ncbi/mapped-sequences/$file.bam ~/ncbi/mapped-sequences/$file.sam
 done
 ```
@@ -279,8 +288,10 @@ done
 ### Extracting the unmapped reads using script named extract-unmappedbam.sh
 
 ```
+#Loops through each file
 for file in $(cat ../Raw-Data/SraAccList.txt)
 do
+#Extract unmappeed reads and save in new .bam file
 samtools view -b -f 12 ~/ncbi/mapped-sequences/$file.bam > ~/ncbi/mapped-sequences/unmapped-reads/$file.bam
 done
 ```
@@ -288,8 +299,10 @@ done
 ### Sorting bam files with unmapped reads by read name using script named sort-unmappedbam.sh
 
 ```
+#Loops through each file
 for file in $(cat ../Raw-Data/SraAccList.txt)
 do
+#Sort .bam files with unmapped reads by order of name
 samtools sort -n ~/ncbi/mapped-sequences/unmapped-reads/$file.bam -o ~/ncbi/mapped-sequences/unmapped-reads/$file.sorted.bam
 done
 ```
@@ -324,8 +337,10 @@ done
 ### Converting sorted bam files to fastq using script names bam2fq.sh
 
 ```
+#Loops through each file
 for file in $(cat ../Raw-Data/SraAccList.txt)
 do
+#Convert .bam files to .fastq
 samtools bam2fq ~/ncbi/mapped-sequences/unmapped-reads/$file.sorted.bam > ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/$file.fastq
 done
 ```
@@ -349,11 +364,15 @@ done
 ### Quality control using fastqc and multiqc using script named fastqc-unmappedreads.sh
 
 ```
+#Loops through each file
 for file in $(cat ../Raw-Data/SraAccList.txt)
 do
+#Generate quality check report
 fastqc ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/$file.fastq -o ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/fastqc
 done
+#Combine multiple quality check reports into one report
 multiqc ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/fastqc -o ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/fastqc
+
 ```
 
 ### Output
@@ -391,15 +410,20 @@ fastqc
      └── SRR12245799_fastqc.zip
 
 ```
-### De-novo assembly of unmapped reads using megahit
+
+### De-novo assembly of unmapped reads using megahit using script named denovo-assembly.sh
 
 ```
+#Loops through each file
 for file in $(cat ../Raw-Data/SraAccList.txt)
-do 
-megahit --12 ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/$file.fastq -o ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/$file-megahitout 
+do
+#Perform denovo assembly
+megahit --12 ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/$file.fastq -o ~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/$file-megahitout
 done
 ```
+
 ### Output of one sample: SRR12245791-megahitout
+
 ```
 ├── checkpoints.txt
 ├── done
@@ -486,42 +510,57 @@ done
 ├── log
 └── options.json
 ```
-## Step 6: Verfication using kaiju
+
+## Step 6: Verfication using kaiju script named kaiju-virus-dna-identifier.sh
+
 ### Setup
+
 ```
+#Assigns data directory to a variable
 path1=~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq
+#Loops through each de-novo assembled file
 for file in $(cat ../Raw-Data/SraAccList.txt)
 do
+#Creates a directory for each file
 mkdir $path1/kaiju/$file
+#Queries each sequence read against Kaiju viruses database and returns the output to a file
 kaiju -t $path1/kaiju/bin/kaijuDB/nodes.dmp -f $path1/kaiju/bin/kaijuDB/viruses/kaiju_db_viruses.fmi -i $path1/$file-megahitout/final.contigs.fa -o $path1/kaiju/$file/$file.out
+#Extracts the reads which matched virus DNA and assinged code 'C' for 'Classified'
 grep 'C' $path1/kaiju/$file/$file.out | cut -f 2 > $path1/kaiju/$file/identifiers.txt
+#Creates an empty fasta file
 touch $path1/kaiju/virus-dna/$file.fasta
 mkdir $path1/kaiju/virus-dna/$file-contigs
+#Loops through each sequence read file and extracts all the identified virus DNA
 for id in $(cat $path1/kaiju/$file/identifiers.txt)
 do
 grep -A1 $id" " $path1/$file-megahitout/final.contigs.fa >> $path1/kaiju/virus-dna/$file.fasta
 grep -A1 $id" " $path1/$file-megahitout/final.contigs.fa > $path1/kaiju/virus-dna/$file-contigs/$id.fasta
 done
 echo $file' complete'
-done 
+done
 ```
 
-## Step 7: Blastn for similarity match and virus identification
+## Step 7: Blastn for similarity match and virus identification script named blast-results.sh
+
 ### Setup
+
 ```
+#Assign data directory to a variable
 path1=~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/kaiju
+#Loops through each file
 for file in $(cat ../Raw-Data/SraAccList.txt)
 do
 mkdir $path1/virus-dna/$file-contigs/blast-results
 touch $path1/virus-dna/blast-results/$file-blast-results.txt
 for id in $(cat $path1/$file/identifiers.txt)
 do
-blastn -db BGdb -query $path1/virus-dna/$file-contigs/$id.fasta -out $path1/virus-dna/$file-contigs/blast-results/$id.out -max_target_seqs 1 
-echo $id >> $path1/virus-dna/virus-dna/blast-results/$file-blast-result.txt
+#Performs a blastn search of each sequence and saves results to an output file
+blastn -db BGdb -query $path1/virus-dna/$file-contigs/$id.fasta -out $path1/virus-dna/$file-contigs/blast-results/$id.out -max_target_seqs 1
+echo $id >> $file-blast-result.txt
 grep '>' $path1/virus-dna/$file-contigs/blast-results/$id.out >> $file-blast-result.txt
 done
 echo $file' complete'
-done 
+done
 ```
 ### Extracting specific identified begomovirus contigs
 ```
@@ -533,19 +572,23 @@ grep -A1 $(cat $path1/blast-results/$file-identifiers.txt) $path1/$file.fasta > 
 done 
 ```
 
-### Downloading the ToLCV genomes
+### Downloading the ToLCV genomes script named retrieving-Begomovirus-genomes.sh
 
 #### Setup
+
 We downloaded the genomes using the script: retrieving-Begomovirus-genomes.sh
 
 ```
+#Loops through each file
 for file in $(cat ../Raw-Data/Begomovirus-AccessionList)
 do
+#search for the file accession against nucleotide database, then outputs the match in fasta format and saves in a file
 esearch -db nucleotide -query $file | efetch -format fasta > ~/ncbi/Begomovirus-Genomes/$file.fasta
 done
 ```
 
 ### Output
+
 ```
 .
 ├── Begomovirus-Genomes
@@ -611,19 +654,24 @@ done
    └── Z48182.fasta
 
 ```
+
 ## Step 7: Performing blastn search for each of our samples' contigs sequences
 
 ### Setup
-We created 
+
+We created
 
 ## Step 8: Making Blast Database using downloaded ToLCV genomes
 
 ### Setup
+
 We put all genome files in one file called All_BG_Genomes.fasta
 
 ```
+#Loops through each file
 for file in $(cat list.txt)
 do
+#open each file and redirects the content to another file containing output of all the sequences
 cat $file >> All_BG_Genomes.fasta
 done
 ```
@@ -645,5 +693,3 @@ makeblastdb -in All_BG_Genomes.fasta -out BGdb.out dbtype 'nucl'
 ├── BGdb.ntf
 ├── BGdb.nto
 ```
-
-
