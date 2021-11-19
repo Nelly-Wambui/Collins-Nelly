@@ -662,9 +662,22 @@ grep -B1 ">" $path1/blast-results/$file-blast-result.txt | head -n 1 > $path1/bl
 grep -A1 $(cat $path1/blast-results/$file-identifiers.txt) $path1/$file.fasta > $path1/final-blast-contigs/$file.fasta
 done 
 ```
+### Output
+```
+├── SRR12245789.fasta
+├── SRR12245790.fasta
+├── SRR12245791.fasta
+├── SRR12245792.fasta
+├── SRR12245793.fasta
+├── SRR12245794.fasta
+├── SRR12245795.fasta
+├── SRR12245796.fasta
+├── SRR12245797.fasta
+├── SRR12245798.fasta
+└── SRR12245799.fasta
+```
 
 ### Blastn 
-
 ```
 #Assign data directory to a variable
 path1=~/ncbi/mapped-sequences/unmapped-reads/unmapped-fastq/kaiju
