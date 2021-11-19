@@ -60,7 +60,7 @@ done
 
 ## Step 2: Extracting .sra files
 
-We extracted individual .sra file into fastq using a script named extract-sra.sh
+We extracted individual .sra file into fastq files using a script named extract-sra.sh
 
 ```
 #Loops through a list of the sequence reads accession number
@@ -570,7 +570,7 @@ done
 
 ## Step 7: Blastn for similarity match and virus identification script named blast-results.sh
 
-### Downloading the ToLCV genomes script named retrieving-Begomovirus-genomes.sh
+### Downloading the ToLCV genomes using script named retrieving-Begomovirus-genomes.sh
 
 #### Setup
 
@@ -663,7 +663,7 @@ grep -A1 $(cat $path1/blast-results/$file-identifiers.txt) $path1/$file.fasta > 
 done 
 ```
 
-### Setup
+### Blastn 
 
 ```
 #Assign data directory to a variable
@@ -676,16 +676,13 @@ touch $path1/virus-dna/blast-results/$file-blast-results.txt
 for id in $(cat $path1/$file/identifiers.txt)
 do
 #Performs a blastn search of each sequence and saves results to an output file
-blastn -db BGdb -query $path1/virus-dna/$file-contigs/$id.fasta -out $path1/virus-dna/$file-contigs/blast-results/$id.out -max_target_seqs 1
-echo $id >> $file-blast-result.txt
+blastn -db BGdb -query $path1/virus-dna/$file-contigs/$id.fasta -out $path1/virus-dna/$file-contigs/blast-results/$id.out -max_target_seqs 1 
+echo $id >> $path1/virus-dna/blast-results/$file-blast-result.txt
 grep '>' $path1/virus-dna/$file-contigs/blast-results/$id.out >> $file-blast-result.txt
 done
 echo $file' complete'
-done
+done 
 ```
-
-
-
 
 ## Step 8: Making Blast Database using downloaded ToLCV genomes
 
