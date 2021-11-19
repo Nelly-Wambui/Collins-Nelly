@@ -203,6 +203,7 @@ bowtie2-build GCF_000188115.4_SL3.0_genomic.fna tomato_t15
 ### Bash script for alignment/mapping of the high-quality reads to the tomato genome named map-sequences.sh
 
 ```
+#Loops through each file
 for file in $(cat ../Raw-Data/SraAccList.txt)
 do
 #Maps high quality reads to the tomato genome
