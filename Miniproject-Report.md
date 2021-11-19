@@ -394,6 +394,8 @@ fastqc
 ## Step 6: Downloading the ToLCV genomes
 
 ### Setup
+We downloaded the genomes using the script: retrieving-Begomovirus-genomes.sh
+
 ```
 for file in $(cat ../Raw-Data/Begomovirus-AccessionList)
 do
