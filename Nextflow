@@ -1,0 +1,82 @@
+#!usr/bin/env nextflow
+params.out_dir = ("./")
+params.data = "./AccList.txt"
+input_ch = Channel.fromPath(params.data)
+
+// read the list of sra accession numbers
+process echoList {
+	publishDir "${params.out_dir}/process1a"
+	input:
+	file list from input_ch
+
+	output:
+	stdout results into results_ch
+
+	script:
+	"""
+	cat $list 
+	"""
+}
+// download raw sequence reads in fastq
+process DownloadSra {  
+	publishDir "${params.out_dir}/process2a"
+	input:
+	val acc from results_ch
+
+	output:
+	file "${acc}*.fastq" into sra_ch
+
+	script:
+	"""
+	fastq-dump ${acc}
+	"""
+}
+// quality check - remove adapters, poly-N sequences and filter off low quality reads and download tomato genome
+process qualityCheck {
+    publishDir "${params.out_dir}/process3a"
+    input:
+    file fastq from sra_ch
+    // val acc from results_ch
+
+    output:
+    file "*.html" into htmlReport_ch
+    file "*.json" into jsonReport_ch
+    file "${fastq}" into qualityFastq_ch
+    file "*.fna.gz" into genome_ch
+
+    script:
+    """
+    fastp -i ${fastq}  
+    wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/188/115/GCF_000188115.4_SL3.0/GCF_000188115.4_SL3.0_genomic.fna.gz
+
+    """
+}
+// unzip tomato genome
+process unZip {
+    publishDir "${params.out_dir}/process4a"
+    input:
+    file genome from genome_ch
+
+    output:
+    file "*.fna" into unzipped_ch
+
+    script:
+    """
+    gunzip ${genome} 
+    
+    """
+}
+// builds tomato genome index
+process buildIndex{
+    publishDir "${params.out_dir}/process5a"    
+    input:
+    file unzip from unzipped_ch
+
+    output:
+    file "tomato_t15*" into buildfiles_ch
+
+    script:
+    """
+    bowtie2-build ${unzip} tomato_t15
+    """
+}
