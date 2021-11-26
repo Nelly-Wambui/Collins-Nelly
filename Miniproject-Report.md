@@ -13,6 +13,8 @@ As part of the bioinformatics internship, we undertook this mini-project to repr
 
 1. Dr. Caleb Kibet
 2. Ruth Nanjala
+3. Pauline Karega
+4. Eric Gathirwa
 
 # Background Information
 
