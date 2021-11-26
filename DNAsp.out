@@ -1,0 +1,29 @@
+Datafile	Region	Ingroup	Outgroup	n	Sites	NetSites	S	Eta	Hap	Hd	VarHd	Pi	VarPi	AvNumDif	ThetaNuc	ThetaG	ZnS	G+Cn	G+Gc	G+Ctot	TajimaD	SigD	FuLiD*	SigD	FuLiF*	SigF	FuFs
+AB110218.fasta	       1-2791	    1	    0	    1	   2791	   2791	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4135	0.0000	0.4135	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+AB116632.fasta	       1-2791	    1	    0	    1	   2791	   2791	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4124	0.0000	0.4124	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+AF024715.fasta	       1-2781	    1	    0	    1	   2781	   2781	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4096	0.0000	0.4096	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+AF071228.fasta	       1-2791	    1	    0	    1	   2791	   2791	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4128	0.0000	0.4128	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+AF105975.fasta	       1-2793	    1	    0	    1	   2793	   2793	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4139	0.0000	0.4139	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+AF271234.fasta	       1-2782	    1	    0	    1	   2782	   2782	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4098	0.0000	0.4098	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+AJ223505.fasta	       1-2781	    1	    0	    1	   2781	   2781	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4096	0.0000	0.4096	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+AJ489258.fasta	       1-2781	    1	    0	    1	   2781	   2781	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4096	0.0000	0.4096	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+AY134494.fasta	       1-2781	    1	    0	    1	   2781	   2781	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4056	0.0000	0.4056	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+AY502934.fasta	       1-2794	    1	    0	    1	   2794	   2794	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4044	0.0000	0.4044	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+AY594174.fasta	       1-2781	    1	    0	    1	   2781	   2781	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4103	0.0000	0.4103	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+DQ631892.fasta	       1-2781	    1	    0	    1	   2781	   2781	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4088	0.0000	0.4088	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+EF060196.fasta	       1-2781	    1	    0	    1	   2781	   2781	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4106	0.0000	0.4106	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+EF185318.fasta	       1-2790	    1	    0	    1	   2790	   2790	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4129	0.0000	0.4129	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+EF523478.fasta	       1-2781	    1	    0	    1	   2781	   2781	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4096	0.0000	0.4096	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+EF539831.fasta	       1-2781	    1	    0	    1	   2781	   2781	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4106	0.0000	0.4106	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+EU635776.fasta	       1-2770	    1	    0	    1	   2770	   2770	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4202	0.0000	0.4202	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+GU076440.fasta	       1-2781	    1	    0	    1	   2781	   2781	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4135	0.0000	0.4135	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+GU325633.fasta	       1-2781	    1	    0	    1	   2781	   2781	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4081	0.0000	0.4081	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+GU983859.fasta	       1-2781	    1	    0	    1	   2781	   2781	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4070	0.0000	0.4070	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+JX856172.fasta	       1-2781	    1	    0	    1	   2781	   2781	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4106	0.0000	0.4106	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+KF229723.fasta	       1-2791	    1	    0	    1	   2791	   2791	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4171	0.0000	0.4171	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+KF477277.fasta	       1-2791	    1	    0	    1	   2791	   2791	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4145	0.0000	0.4145	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+X76319.fasta	       1-2790	    1	    0	    1	   2790	   2790	    0	    0	    1	n.a.	n.a.	n.a.	n.d.	n.a.	n.a.	n.a.	n.a.	0.4136	0.0000	0.4136	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.	n.a.
+
+by DnaSP Ver. 5.10.01    Nov 25, 2021
+Error file: C:\Program Files (x86)\DnaSP v5\MF_DnaSPErrors.err
+Calculated using the total number of mutations
